@@ -1,8 +1,10 @@
+
 import 'package:audio_manager/audio_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_audio_query/flutter_audio_query.dart';
 import 'package:provider/provider.dart';
 import 'package:roarmusic/models/app_model.dart';
+import 'package:roarmusic/models/song_model.dart';
 import 'package:roarmusic/presentation/splash.dart';
 
 void main() {
@@ -10,9 +12,11 @@ void main() {
     providers: [
       ChangeNotifierProvider(
         create: (_) => App(
-            audioManagerInstance: AudioManager.instance,
             audioQuery: FlutterAudioQuery()),
-      )
+      ),
+      ChangeNotifierProvider(
+        create: (_)=>SongProvider(audioManagerInstance: AudioManager.instance),
+      ),
     ],
     child: MyApp(),
   ));

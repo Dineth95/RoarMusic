@@ -1,4 +1,3 @@
-import 'package:audio_manager/audio_manager.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_audio_query/flutter_audio_query.dart';
@@ -13,9 +12,8 @@ class App with ChangeNotifier,DiagnosticableTreeMixin{
   bool showBottomBar=false;
   int playingIndex;
   final FlutterAudioQuery audioQuery;
-  final AudioManager audioManagerInstance;
 
-  App({@required this.audioManagerInstance,@required this.audioQuery});
+  App({@required this.audioQuery});
 
   ///get songs from phone
   Future<void> getSongsList()async{

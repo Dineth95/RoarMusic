@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:roarmusic/models/app_model.dart';
+import 'package:roarmusic/models/song_model.dart';
 import 'package:roarmusic/presentation/homepage_view.dart';
 import 'package:roarmusic/utils/router.dart';
 
@@ -17,7 +18,10 @@ class _SplashState extends State<Splash> {
   }
 
   void handleTimeout() {
+    ///get songs from the phone storage
     Provider.of<App>(context, listen: false).getSongsList();
+    ///set up the audio manager
+    Provider.of<SongProvider>(context, listen: false).setupAudio();
     changeScreen();
   }
 
