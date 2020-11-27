@@ -13,10 +13,10 @@ class SongProvider with ChangeNotifier,DiagnosticableTreeMixin{
 
   int playingSongIndex;
   song_status songStatus;
-  double _slider;
-  Duration _duration;
-  Duration _position;
-  double _sliderVolume;
+  double slider=0;
+  Duration duration=Duration(milliseconds: 0);
+  Duration position=Duration(milliseconds: 0);
+  double _sliderVolume=0;
   String _error;
   bool isPlaying = false;
   final AudioManager audioManagerInstance;
@@ -24,32 +24,32 @@ class SongProvider with ChangeNotifier,DiagnosticableTreeMixin{
 
   ///set up the audio manager at the beginning
   void setupAudio()async{
-    /*audioManagerInstance.intercepter = true;
+    //audioManagerInstance.intercepter = true;
     //PlayMode playMode = AudioManager.instance.playMode;
-    audioManagerInstance.play(auto: true);*/
+    audioManagerInstance.play(auto: true);
 
     audioManagerInstance.onEvents((events, args) {
       print("$events, $args");
       switch (events) {
         case AudioManagerEvents.start:
-          _position = audioManagerInstance.position;
-          _duration = audioManagerInstance.duration;
-          _slider = 0;
+          position = audioManagerInstance.position;
+          duration = audioManagerInstance.duration;
+          slider = 0;
           notifyListeners();
           break;
         case AudioManagerEvents.ready:
           print("ready to play");
           _error = null;
           _sliderVolume = audioManagerInstance.volume;
-          _position = audioManagerInstance.position;
-          _duration = audioManagerInstance.duration;
+          position = audioManagerInstance.position;
+          duration = audioManagerInstance.duration;
           notifyListeners();
           // if you need to seek times, must after AudioManagerEvents.ready event invoked
           // AudioManager.instance.seekTo(Duration(seconds: 10));
           break;
         case AudioManagerEvents.seekComplete:
-          _position = audioManagerInstance.position;
-          //_slider = _position.inMilliseconds / _duration.inMilliseconds;
+          position = audioManagerInstance.position;
+          slider = position.inMilliseconds / duration.inMilliseconds;
           notifyListeners();
           print("seek event is completed. position is [$args]/ms");
           break;
@@ -61,8 +61,8 @@ class SongProvider with ChangeNotifier,DiagnosticableTreeMixin{
           notifyListeners();
           break;
         case AudioManagerEvents.timeupdate:
-          _position = audioManagerInstance.position;
-          //_slider = _position.inMilliseconds / _duration.inMilliseconds;
+          position = audioManagerInstance.position;
+          slider = position.inMilliseconds / duration.inMilliseconds;
           notifyListeners();
           audioManagerInstance.updateLrc(args["position"].toString());
           break;

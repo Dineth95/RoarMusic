@@ -29,15 +29,6 @@ class App with ChangeNotifier,DiagnosticableTreeMixin{
     }
   }
 
-  ///initialize the bottom bar
-  playSong(int playIndex){
-    //open bottom bar
-    showBottomBar=true;
-    ///if one song is playing close it
-    playingIndex=playIndex;
-    notifyListeners();
-  }
-
   ///for debugging values
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
