@@ -26,7 +26,7 @@ class SongProvider with ChangeNotifier,DiagnosticableTreeMixin{
   void setupAudio()async{
     //audioManagerInstance.intercepter = true;
     //PlayMode playMode = AudioManager.instance.playMode;
-    audioManagerInstance.play(auto: true);
+    audioManagerInstance.play(auto: false);
 
     audioManagerInstance.onEvents((events, args) {
       print("$events, $args");

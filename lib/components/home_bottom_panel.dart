@@ -26,8 +26,8 @@ class HomeBottomPanel extends StatelessWidget {
                 child: SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       trackHeight: 2,
-                      thumbColor: Colors.blueAccent,
-                      overlayColor: Colors.blue,
+                      thumbColor: Color(0xFFA03D72),
+                      overlayColor: Color(0xFFA03D72),
                       thumbShape: RoundSliderThumbShape(
                         disabledThumbRadius: 5,
                         enabledThumbRadius: 5,
@@ -88,8 +88,8 @@ class HomeBottomPanel extends StatelessWidget {
               child: Center(
                 child: IconButton(
                   onPressed: () async {
-                    if(songProvider.isPlaying)
-                      songProvider.audioManagerInstance.toPause();
+                    /*if(songProvider.isPlaying)
+                      songProvider.audioManagerInstance.toPause();*/
                     songProvider.audioManagerInstance.playOrPause();
                   },
                   padding: const EdgeInsets.all(0.0),

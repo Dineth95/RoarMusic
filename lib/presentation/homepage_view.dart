@@ -19,6 +19,16 @@ class HomePageView extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
+              ListTile(
+                leading: Text("Library"
+                ,style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 23
+                  ),),
+              ),
+              SizedBox(
+                height: 10,
+              ),
 
               ///song list view
               Consumer<App>(

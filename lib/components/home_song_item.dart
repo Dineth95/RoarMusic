@@ -5,6 +5,8 @@ import 'package:flutter_audio_query/flutter_audio_query.dart';
 import 'package:provider/provider.dart';
 import 'package:roarmusic/models/app_model.dart';
 import 'package:roarmusic/models/song_model.dart';
+import 'package:roarmusic/presentation/song_play_view.dart';
+import 'package:roarmusic/utils/router.dart';
 
 class HomeSongItem extends StatelessWidget {
   final SongInfo songInfo;
@@ -22,8 +24,14 @@ class HomeSongItem extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            onTap: () {
-              print("list item tapped");
+            onTap: ()async{
+              Provider.of<SongProvider>(context, listen: false).playSong(
+                  index,
+                  songInfo.filePath,
+                  songInfo.title,
+                  songInfo.displayName,
+                  songInfo.albumArtwork);
+              await MyRouter.pushPage(context,SongPlayView(songInfo: this.songInfo));
             },
             leading: SizedBox(
                 height: 80,
