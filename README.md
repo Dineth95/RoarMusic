@@ -16,4 +16,7 @@ after that run the app
 all android release functionality added
 
 
-![alt text](https://github.com/Dineth95/RoarMusic/blob/main//image.jpg)
+![alt text](https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc0.jpg)
+![alt text](https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc1.jpg)
+![alt text](https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc2.jpg)
+![alt text](https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc3.jpg)
