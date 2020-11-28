@@ -15,8 +15,7 @@ after that run the app
 
 all android release functionality added
 
-<img src="https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc0.jpg" width="180" height="300">
-![alt text](https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc0.jpg)
-![alt text](https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc1.jpg)
-![alt text](https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc2.jpg)
-![alt text](https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc3.jpg)
+<img src="https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc0.jpg" width="160" height="300">
+<img src="https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc1.jpg" width="160" height="300">
+<img src="https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc2.jpg" width="160" height="300">
+<img src="https://github.com/Dineth95/RoarMusic/blob/main/screenshots/sc3.jpg" width="160" height="300">
