@@ -56,7 +56,7 @@ class HomePageView extends StatelessWidget {
               }),
               Consumer<SongProvider>(builder: (BuildContext context,
                   SongProvider songProvider, Widget child) {
-                if (songProvider.isPlaying) {
+                if (songProvider.isPlaying || songProvider.audioManagerInstance.position>Duration(milliseconds: 0)) {
                   return Container(
                       decoration: BoxDecoration(boxShadow: [
                         BoxShadow(

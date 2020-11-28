@@ -24,14 +24,20 @@ class HomeSongItem extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            onTap: ()async{
-              Provider.of<SongProvider>(context, listen: false).playSong(
-                  index,
-                  songInfo.filePath,
-                  songInfo.title,
-                  songInfo.displayName,
-                  songInfo.albumArtwork);
-              await MyRouter.pushPage(context,SongPlayView(songInfo: this.songInfo));
+            onTap: (){
+
+              if(Provider.of<SongProvider>(context, listen: false).duration==Duration(milliseconds: 0)){
+                Provider.of<SongProvider>(context, listen: false).playSong(
+                    index,
+                    songInfo.filePath,
+                    songInfo.title,
+                    songInfo.displayName,
+                    songInfo.albumArtwork);
+              }
+
+              Future.delayed(const Duration(milliseconds: 500), () {
+                MyRouter.pushPage(context,SongPlayView(songInfo: this.songInfo));
+              });
             },
             leading: SizedBox(
                 height: 80,

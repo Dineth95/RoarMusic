@@ -35,8 +35,7 @@ class SongPlayView extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20),
               width: MediaQuery.of(context).size.width*0.9,
               height: 100,
-              child: TyperAnimatedTextKit(
-                speed: Duration(milliseconds: 1900),
+              child: ColorizeAnimatedTextKit(
                   onTap: () {
                     print("Tap Event");
                   },
@@ -44,48 +43,33 @@ class SongPlayView extends StatelessWidget {
                     songInfo.title
                   ],
                   textStyle: TextStyle(
-                      fontSize: 22.0,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.bold
+                      //fontFamily: "Horizon"
                   ),
+                  colors: [
+                    Colors.purple,
+                    Colors.white,
+                    Color(0xFF663961),
+                    Color(0xFFA03D72)
+                  ],
                   textAlign: TextAlign.start,
                   alignment: AlignmentDirectional.topStart // or Alignment.topLeft
               ),
             ),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               CircleAvatar(
-                radius: MediaQuery.of(context).size.width * 0.2,
+                radius: MediaQuery.of(context).size.width * 0.25,
                 backgroundImage: AssetImage(
                         "assets/images/cover.jpg",
                       )
               )
             ]),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             Consumer<SongProvider>(builder: (BuildContext context,
                 SongProvider songProvider, Widget child) {
-              /*if (songProvider.isPlaying) {
-                return Container(
-                    decoration: BoxDecoration(boxShadow: [
-                      BoxShadow(
-                        color: Color(0xFF663961),
-                        blurRadius: 25.0, // soften the shadow
-                        spreadRadius: 5.0, //extend the shadow
-                        offset: Offset(
-                          15.0, // Move to right 10  horizontally
-                          15.0, // Move to bottom 10 Vertically
-                        ),
-                      )
-                    ]),
-                    child: HomeBottomPanel(
-                      songProvider: songProvider,
-                    ));
-              } else {
-                return SizedBox(
-                  height: 10,
-                );
-              }*/
               return Container(
                 width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(boxShadow: [
